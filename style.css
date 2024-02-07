@@ -1,0 +1,88 @@
+body {
+    background-color: white;
+    box-sizing: border-box;
+    margin: 0 auto;
+    
+    
+    /*
+    цвета для сайта
+    #1F2833 - светло черный
+    #C5C6C7 - светло серый
+    #66FCF1 - тифани
+    #45A29E - темный тифани
+    */
+}
+
+.header__conteiner {
+    background-color: #2f6e6b;
+    padding: 40px;
+    margin-bottom: 30px;    
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    
+}
+
+.header__flexbox {
+    display: flex;
+    align-items: center;
+    
+}
+
+.row1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-right: 20px;
+}
+
+.row2 {
+    margin-left: auto;
+    
+}
+
+.hi__world {
+    font-size: 40px;
+    padding-left: 80px;
+    
+}
+
+.head__logo {
+    border-radius: 40px;
+    width: 80px;
+    height: 80px;    
+}
+
+.head__logo:hover {
+    width: 100px;
+    height: 100px;
+}
+
+.main__conteiner {
+    
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 30px;
+    padding: 40px;  
+}
+
+.column__first {
+    margin-right: 40px;
+    background-color: #45A29E;
+    width: 30%;
+    padding: 20px;
+}
+
+.column__second {
+    background-color: #45A29E;
+    width: 70%;
+}
+
+.footer__conteiner {
+    background-color: #2f6e6b;
+    padding: 40px;
+    
+}
