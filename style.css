@@ -23,6 +23,7 @@ body {
     width: 40px;
     height: 40px;
     margin-right: 10px;
+    text-decoration: none;
     
 }
 
@@ -44,8 +45,8 @@ body {
     
 }
 
-.hi__world {
-    font-size: 40px;
+h1 {
+    font-size: 46px;
     padding-left: 80px;
     
 }
@@ -70,19 +71,69 @@ body {
 }
 
 .column__first {
-    margin-right: 40px;
-    background-color: #45A29E;
+    margin-right: 80px;
+    background-color: #56c9c3;
     width: 30%;
     padding: 20px;
 }
 
 .column__second {
-    background-color: #45A29E;
+    background-color: #56c9c3;
     width: 70%;
+    padding: 20px;
 }
 
 .footer__conteiner {
     background-color: #2f6e6b;
     padding: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+h2 {
+    font-size: 32px;
+}
+
+.achiv {
+    font-size: 20px;
     
+}
+
+.projects {
+    background-color: white;
+    margin-bottom: 20px;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+}
+
+button {
+    background-color: white;
+    font-size: 16px;
+    
+    color: #2f6e6b;
+    border-radius: 5px;
+    width: 100px;
+    height: 50px;
+}
+
+button:hover {
+    background-color: #2f6e6b;
+    color: white;
+}
+
+button:active {
+    border-radius: 10px;
+    height: 45px;
+}
+
+p {
+    font-size: 32px;
+}
+
+.rock__paper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
