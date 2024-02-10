@@ -67,3 +67,69 @@ function whoWin() {
         gameResult.innerText = "Победил бот.";
     }
 }
+
+const tiitleValue = document.querySelector(".js_tittle");
+const postValue = document.querySelector(".post__input");
+const approvePost = document.querySelector(".send__post");
+const blogColumn = document.querySelector(".blog__column");
+const defaultLetter = document.querySelector(".empty__letter");
+const blogArr = [];
+let counter = 0;
+
+tiitleValue.addEventListener("click", function(){
+    tiitleValue.value = "";
+})
+
+postValue.addEventListener("click", function(){
+    postValue.value = "";
+})
+
+approvePost.addEventListener("click", function(){
+    if ((tiitleValue.value === "") || (postValue.value === "")) {
+        
+        return alert("Поля ввода не должны быть пустыми");
+    }
+
+    if ((postValue.value == "Введите текст заметки") || (tiitleValue.value == "Введите заголовок")) {
+        return alert("Ну введи хоть что то свое -_-");
+    }
+
+    blogArr.push(tiitleValue.value);
+    blogArr.push(postValue.value);
+
+    clearDefault();
+    blogPostingNews();
+
+    postValue.value = "Введите текст заметки";
+    tiitleValue.value = "Введите заголовок";
+})
+
+function clearDefault() {
+    defaultLetter.innerText = "";
+}
+
+function blogPostingNews(){
+    blogColumn.innerHTML += `<h3 class="blog__h3"> ${blogArr[counter]} </h3>`;
+    blogColumn.innerHTML += `<div class="blog__div"> ${blogArr[counter+1]} </div>`;
+    counter += 2;
+}
+
+
+
+
+const tikitaka = document.querySelector(".tikitaka")
+let counterTikitaka = 0;
+const mapWinner = [[1,2,3]]
+
+for (let i=0; i<9;i++) {
+    tikitaka.innerHTML += `<div class="${i} tikitaka__pole"> - </div>`;
+}
+
+let pole = document.querySelectorAll(".tikitaka__pole");
+
+pole.forEach((elem) => {
+    elem.addEventListener("click", function(){
+        elem.innerHTML = "X";
+        counterTikitaka++;
+    })
+})
