@@ -137,3 +137,49 @@ p {
     flex-direction: row;
     justify-content: space-around;
 }
+
+.blog {
+    display: flex;
+    flex-direction: row;
+}
+
+.blog__first {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    padding: 20px;
+    margin-right: 20px;
+}
+
+.tittle__input {
+    margin-bottom: 20px;
+}
+
+.post__input {
+    height: 200px;    
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.send__post {
+    align-items: center;
+    width: 100%;
+}
+
+.blog__div {
+    margin-bottom: 30px;
+}
+
+.tikitaka {
+    display: flex;
+    flex-wrap: wrap;
+    width: 150px;
+}
+
+.tikitaka__pole {
+    width: 50px;
+    height: 50px;
+    border: 2px solid red;
+    background-color: blue;
+    box-sizing: border-box;
+}
