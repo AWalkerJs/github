@@ -68,6 +68,7 @@ function whoWin() {
     }
 }
 
+
 const tiitleValue = document.querySelector(".js_tittle");
 const postValue = document.querySelector(".post__input");
 const approvePost = document.querySelector(".send__post");
@@ -119,7 +120,18 @@ function blogPostingNews(){
 
 const tikitaka = document.querySelector(".tikitaka")
 let counterTikitaka = 0;
-const mapWinner = [[1,2,3]]
+let markCounter = [];
+let zeroCounter = [];
+const winner = document.querySelector(".tikitaka__Winner")
+
+const mapWinner =   [[0,1,2],
+                    [3,4,5],
+                    [6,7,8],
+                    [0,3,6],
+                    [1,4,7],
+                    [2,5,8],
+                    [0,4,8],
+                    [2,4,6],];
 
 for (let i=0; i<9;i++) {
     tikitaka.innerHTML += `<div class="${i} tikitaka__pole"> - </div>`;
@@ -127,9 +139,60 @@ for (let i=0; i<9;i++) {
 
 let pole = document.querySelectorAll(".tikitaka__pole");
 
-pole.forEach((elem) => {
+pole.forEach((elem, index) => {
     elem.addEventListener("click", function(){
-        elem.innerHTML = "X";
-        counterTikitaka++;
+        if (elem.innerText == "-") {
+            elem.innerHTML = "X";
+            markCounter.push(index);
+            checkWin();
+            botRound();
+        } 
     })
 })
+
+function botRound() {
+    let positionTik = getRandomPosition();
+    if ((pole[positionTik].innerHTML == "X") || (pole[positionTik].innerHTML == "O")) {
+        botRound();
+    } else {
+        pole[positionTik].innerHTML = "O";
+        zeroCounter.push(positionTik);
+    }
+    checkWin();
+}
+
+function getRandomPosition() {
+    return Math.floor(Math.random() * 9);
+}
+
+function checkWin() {
+    
+    for(let ch of mapWinner) {
+        let winnerX = 0;
+        let winnerO = 0;
+            for (let i=0; i<zeroCounter.length; i++){
+                if (ch.includes(zeroCounter[i])) {
+                    winnerO++;
+                    if (winnerO == 3) {
+                        winner.innerHTML = "Победили НОЛИКИ";
+                        setTimeout(clearGame,2000);
+                    }
+                }
+                if (ch.includes(markCounter[i])) {
+                    winnerX++;
+                    if (winnerX == 3) {
+                        winner.innerHTML = "Победили КРЕСТИКИ";
+                        setTimeout(clearGame,2000);
+                    }
+                }
+        }
+    }
+}
+
+function clearGame() {
+    for (let ch of pole) {
+        ch.innerText = "-";
+    }
+    markCounter = [];
+    zeroCounter = [];
+}
